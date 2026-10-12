@@ -488,7 +488,7 @@ body.focus-mode #main{padding:0;}
    SEED CONTENT
 ===================================================================== */
 const SEED_CONTENT = {
-  course:{ id:'mgt360', name:'MGT 360', chapters:['ch1','ch2','ch3','ch11','ch12','ch13','ch14'] },
+  course:{ id:'mgt360', name:'MGT 360', chapters:['ch1','ch2','ch3','ch11','ch12','ch13','ch14','ch18'] },
 
   chapters:{
     ch1:{ id:'ch1', number:1, title:'Introducing Management', week:1, courseId:'mgt360',
@@ -511,7 +511,10 @@ const SEED_CONTENT = {
       learningObjectives:['ch13-lo1','ch13-lo2','ch13-lo3','ch13-lo4'] },
     ch14:{ id:'ch14', number:14, title:'Leading and Leadership Development', week:14, courseId:'mgt360',
       sections:['14.1','14.2','14.3','14.4'],
-      learningObjectives:['ch14-lo1','ch14-lo2','ch14-lo3','ch14-lo4'] }
+      learningObjectives:['ch14-lo1','ch14-lo2','ch14-lo3','ch14-lo4'] },
+    ch18:{ id:'ch18', number:18, title:'Communication, Conflict, and Negotiation', week:18, courseId:'mgt360',
+      sections:['18.1','18.2','18.3','18.4'],
+      learningObjectives:['ch18-lo1','ch18-lo2','ch18-lo3','ch18-lo4'] }
   },
 
   learningObjectives:[
@@ -574,7 +577,16 @@ const SEED_CONTENT = {
     { id:'ch14-lo3', chapterId:'ch14', code:'14.3', text:'Identify how situational contingencies influence leadership effectiveness.',
       sections:['14.3'], keyConcepts:['ch14-fiedlers-contingency-model','ch14-hersey-blanchard-model','ch14-path-goal-theory','ch14-lmx-theory','ch14-vroom-jago-model'] },
     { id:'ch14-lo4', chapterId:'ch14', code:'14.4', text:'Summarize the challenges of personal leadership development.',
-      sections:['14.4'], keyConcepts:['ch14-transformational-leadership','ch14-emotional-intelligence-leadership','ch14-interactive-leadership','ch14-moral-leadership'] }
+      sections:['14.4'], keyConcepts:['ch14-transformational-leadership','ch14-emotional-intelligence-leadership','ch14-interactive-leadership','ch14-moral-leadership'] },
+
+    { id:'ch18-lo1', chapterId:'ch18', code:'18.1', text:'Identify the elements in the communication process.',
+      sections:['18.1'], keyConcepts:['ch18-communication-process','ch18-effective-efficient','ch18-persuasive-communication','ch18-noise','ch18-information-filtering','ch18-channel-richness'] },
+    { id:'ch18-lo2', chapterId:'ch18', code:'18.2', text:'Describe ways to improve the effectiveness of communication.',
+      sections:['18.2'], keyConcepts:['ch18-transparency','ch18-active-listening','ch18-constructive-feedback'] },
+    { id:'ch18-lo3', chapterId:'ch18', code:'18.3', text:'Discuss how conflict can be functional and managed successfully.',
+      sections:['18.3'], keyConcepts:['ch18-functional-conflict','ch18-conflict-styles','ch18-structural-conflict-mgmt'] },
+    { id:'ch18-lo4', chapterId:'ch18', code:'18.4', text:'Explain ways to negotiate successfully and avoid negotiation pitfalls.',
+      sections:['18.4'], keyConcepts:['ch18-principled-negotiation','ch18-bargaining-zone','ch18-negotiation-pitfalls','ch18-mediation-arbitration'] }
   ],
 
   concepts:[
@@ -2075,7 +2087,246 @@ const SEED_CONTENT = {
     { id:'ch14-virtual-leadership', term:'Virtual Leadership', tier:'supporting', lo:'14.4', chapterId:'ch14', section:'14.4',
       definition:"Leadership adapted to remote, technology-mediated teams, which depends less on extroversion or charisma and more on clear task direction, efficient project management, and helping members maintain the technology needed to stay connected." },
     { id:'ch14-druckers-leadership-essentials', term:"Drucker's 'Good Old-Fashioned' Leadership", tier:'supporting', lo:'14.4', chapterId:'ch14', section:'14.4',
-      definition:"Peter Drucker's pragmatic view that effective leadership rests on defining a clear mission, accepting leadership as a responsibility rather than a rank, surrounding oneself with talented people, not blaming others when things go wrong, and earning trust through consistency." }
+      definition:"Peter Drucker's pragmatic view that effective leadership rests on defining a clear mission, accepting leadership as a responsibility rather than a rank, surrounding oneself with talented people, not blaming others when things go wrong, and earning trust through consistency." },
+
+    /* ================= CHAPTER 18 ================= */
+    /* ---------------- 18.1 must-know ---------------- */
+    { id:'ch18-communication-process', term:'Communication Process', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The interpersonal process of sending and receiving symbols with messages attached to them: a sender encodes an intended meaning into a message, sends it through a channel to a receiver who decodes it into a perceived meaning, and feedback flows back to the sender — summarized as 'Who? says what? in what ways? to whom? with what result?'",
+      plain:"Someone turns an idea into a message, sends it some way, someone else interprets it — and feedback shows whether they got it right.",
+      why:"Communication is the 'glue' binding planning, organizing, leading, and controlling — plans are shared, structures link people, leaders influence, and controls process performance information, all through communication.",
+      example:"A shift lead texts 'restock fries before 5' (encode + channel); the crew member reads it as 'by 5' or 'right before 5' (decode); a reply like 'on it, by 4:45?' is feedback that confirms the meaning.",
+      textbookExample:"Figure 18.1 shows the two-way process: sender → encodes → message channel → receiver decodes → perceived meaning, with a feedback channel returning to the sender's intended meaning.",
+      commonMistake:"Treating communication as one-way 'sending' — without feedback, the sender has no way to know whether the perceived meaning matches the intended meaning.",
+      examQuestion:"Identify the key elements of the communication process and explain the role of feedback.",
+      mnemonic:"Who says what, in what ways, to whom, with what result? (Sender, Message, Channel, Receiver, Meaning)" },
+
+    { id:'ch18-effective-efficient', term:'Effective vs. Efficient Communication', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Effective communication occurs when the receiver fully understands the sender's message (both interpret it the same way); efficient communication occurs at minimum cost in resources expended. Trade-offs between the two are common.",
+      plain:"Effective = they actually got it. Efficient = it was quick and cheap to send. You often can't max out both.",
+      why:"Busy managers default to efficient channels (mass emails, texts), which save time but risk misunderstanding — knowing the trade-off helps you choose when to invest more time.",
+      example:"Posting a schedule change in the group chat is efficient; pulling each employee aside to explain why is effective but time-consuming.",
+      textbookExample:"An instructor meeting individually with every student about this chapter would be effective but virtually impossible; a team leader visiting each member to explain new procedures guarantees understanding but costs a lot of time.",
+      commonMistake:"Assuming an efficient message is automatically effective — an email to a distribution list saves the sender time, but different receivers may interpret it differently.",
+      examQuestion:"Differentiate effective and efficient communication and give an example where they conflict.",
+      mnemonic:"Effective = Exact understanding; Efficient = Economical." },
+
+    { id:'ch18-persuasive-communication', term:'Persuasive Communication', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Communication that results in the recipient agreeing with or supporting the message; according to Jay Conger it depends on credibility — trust, respect, and integrity in the eyes of others — earned through expertise and through relationships.",
+      plain:"Getting people to actually agree with you, which only works if they see you as believable.",
+      why:"Managers get things done more through convincing than order-giving, drawing on social capital with peers, teammates, and bosses.",
+      example:"A manager with a strong track record of good scheduling decisions easily persuades the team to try a new rotation; a brand-new manager with the same idea may need to build credibility first.",
+      textbookExample:"Persuasion science: hotel guests reused 33% more towels when told '75% of customers who stay in this room reuse their towels' (social norm), and servers earned bigger tips by giving candy with the bill (reciprocity).",
+      commonMistake:"Thinking persuasion is just clever wording — without credibility from expertise or good relationships, there is little chance persuasion succeeds.",
+      examQuestion:"Explain the role of credibility in persuasive communication and identify its two sources.",
+      mnemonic:"Credibility = Expertise + Relationships." },
+
+    { id:'ch18-noise', term:'Noise', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Anything that interferes with the effectiveness of the communication process — including information filtering, poor choice of channels, poor written or oral expression, failure to recognize nonverbal signals, overloads and physical distractions, semantic problems, little or no feedback, status effects, and cultural differences.",
+      plain:"Anything that garbles the message between sender and receiver.",
+      why:"Noise explains why messages that seem clear to the sender still get misunderstood — identifying its source is the first step to fixing it.",
+      example:"Giving instructions during a lunch rush, with the fryer alarm going off and a customer interrupting, is communication full of physical-distraction noise.",
+      textbookExample:"A Japanese executive speaking through an interpreter lost about 20% of his meaning between himself and the interpreter, and another 20% between the interpreter and the Americans.",
+      commonMistake:"Thinking noise only means literal sound — in this chapter it's any interference, including status effects, bad word choice, and cultural differences.",
+      examQuestion:"Define noise and list four common sources that limit effective communication.",
+      mnemonic:null },
+
+    { id:'ch18-information-filtering', term:'Information Filtering', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The intentional distortion of information to make it appear favorable to the recipient — a reluctance 'to speak truth to power' that leaves higher levels with biased, inaccurate information and leads to bad decisions.",
+      plain:"Telling the boss only what they want to hear.",
+      why:"Tom Peters calls it 'Management Enemy Number 1,' warning that 'once you become a boss you will never hear the unadulterated truth again.'",
+      example:"A crew member tells the manager the new procedure is 'going great' when everyone actually finds it confusing, because they don't want to look like a complainer.",
+      textbookExample:"Comments like 'Criticize my boss? I don't have the right to,' 'I'd get fired,' and 'It's her company, not mine' all display information filtering.",
+      commonMistake:"Assuming it's always deliberate lying — it often comes from career protection, fear of retribution, unwillingness to admit mistakes, or a general desire to please.",
+      examQuestion:"What is information filtering, why does it happen, and how does it hurt managerial decisions?",
+      mnemonic:null },
+
+    { id:'ch18-channel-richness', term:'Channel Richness', tier:'must_know', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The range of communication channels from low-richness (posts, e-bulletins, blogs, memos, letters, reports — impersonal, one-way, fast) through email, voicemail, and texts, to high-richness (phone calls, chats, in-person meetings, virtual conferencing — personal, two-way, slower). Written channels suit simple, documented, wide-distribution messages; spoken channels suit complex, difficult messages needing immediate feedback.",
+      plain:"Pick the right way to say it: a memo for simple stuff, a conversation for hard stuff.",
+      why:"Poor choice of channels is a common source of noise — delivering bad news by text, for example, strips away feedback and nonverbal cues.",
+      example:"Announcing the holiday schedule by posted memo works fine; telling an employee they're being moved to fewer hours should happen face to face.",
+      textbookExample:"Figure 18.3 places posts, memos, and reports at the low-richness end, email/voicemail/texts in the middle, and in-person meetings and virtual conferencing at the high-richness end.",
+      commonMistake:"Thinking the 'richest' channel is always best — rich channels are slower and costlier, so simple messages to many people belong in written channels.",
+      examQuestion:"Explain channel richness and match message types to appropriate channels.",
+      mnemonic:"Simple + many people = written; Complex + feelings = face to face." },
+
+    /* ---------------- 18.1 supporting ---------------- */
+    { id:'ch18-communication', term:'Communication', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The interpersonal process of sending and receiving symbols with messages attached to them." },
+    { id:'ch18-credibility', term:'Credibility', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Trust, respect, and integrity in the eyes of others, earned through expertise and through relationships — essential to persuasion." },
+    { id:'ch18-communication-channel', term:'Communication Channel', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The pathway or medium through which a message is conveyed from sender to receiver." },
+    { id:'ch18-nonverbal', term:'Nonverbal Communication', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Communication through gestures, facial expressions, body posture, eye contact, and use of interpersonal space; most of a face-to-face message's impact comes through it." },
+    { id:'ch18-mixed-message', term:'Mixed Message', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"When words communicate one message while actions and body language communicate something else." },
+    { id:'ch18-ethnocentrism', term:'Ethnocentrism', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"The tendency to consider one's own culture superior to others; it hurts communication through poor listening, alienating speech, and inappropriate stereotypes." },
+    { id:'ch18-cultural-etiquette', term:'Cultural Etiquette', tier:'supporting', lo:'18.1', chapterId:'ch18', section:'18.1',
+      definition:"Using appropriate manners, language, and behaviors when interacting with people from other cultures." },
+
+    /* ---------------- 18.2 must-know ---------------- */
+    { id:'ch18-transparency', term:'Communication Transparency', tier:'must_know', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"Being honest and open in sharing accurate and complete information about the organization and what's happening in the workplace — the opposite of hiding or restricting information. Open book management extends it by sharing essential financial information, including pay.",
+      plain:"Not keeping people in the dark — sharing the real numbers and the real story.",
+      why:"Well-informed people make better decisions, and being trusted with information makes them more loyal, engaged, and committed.",
+      example:"A store manager shares weekly sales and labor-cost numbers with the whole crew so they understand why scheduling changes are happening.",
+      textbookExample:"Pay transparency laws are spreading: California and Washington require employers with 15+ workers to include pay ranges in job postings, and Rhode Island requires ranges on request and at offer.",
+      commonMistake:"Assuming transparency has no downsides — Professor Todd Zenger calls pay transparency 'not a panacea' and 'a double-edged sword' that can make workers obsess over pay.",
+      examQuestion:"Explain how communication transparency and open book management improve communication and engagement.",
+      mnemonic:null },
+
+    { id:'ch18-active-listening', term:'Active Listening', tier:'must_know', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"Taking action to help someone say exactly what they really mean, by listening for message content, listening for feelings, responding to feelings, noting all verbal and nonverbal cues (including mixed messages), and paraphrasing and restating what you hear.",
+      plain:"Listening to understand — reflecting back both what people say and how they feel — instead of just waiting to reply.",
+      why:"What people say isn't always what they mean; active listening uncovers the real message and builds trust.",
+      example:"An employee says 'Whatever, I'll just work the double.' An active listener responds: 'Sounds like you're pretty tired of covering extra shifts?'",
+      textbookExample:"Asked 'Don't you think employees should be promoted on the basis of seniority?', a passive listener says 'No, I don't!' while an active listener says 'Am I sensing you believe they should?'",
+      commonMistake:"Jumping to evaluation or advice — active listening requires withholding premature judgment and controlling your own emotions.",
+      examQuestion:"Define active listening, list its rules, and contrast an active vs. passive response.",
+      mnemonic:"Content, Feelings, Respond, Cues, Paraphrase (CFRCP)." },
+
+    { id:'ch18-constructive-feedback', term:'Constructive Feedback', tier:'must_know', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"Telling others how you feel about something they did or said in a way that benefits the receiver: given directly with real feeling based on trust, specific rather than general with clear recent examples, well-timed, limited to things the receiver can address, and in small doses.",
+      plain:"Feedback that actually helps the other person improve, instead of just letting you vent.",
+      why:"Poorly done feedback threatens people and breeds resentment; properly handled criticism can be accepted and used.",
+      example:"Instead of 'You're always sloppy,' say 'Tonight two orders went out missing sauce cups — let's double-check the bag before handing it over.'",
+      textbookExample:"For someone late to meetings: evaluative ('You are unreliable and always late'), interpretive ('you might be spreading yourself too thin'), or descriptive ('You were 30 minutes late for today's meeting and missed a lot of the context') — descriptive is most constructive.",
+      commonMistake:"Giving feedback that serves the sender's needs — like a supervisor scolding a programmer for errors when they're really angry at themselves for unclear instructions.",
+      examQuestion:"List the guidelines for constructive feedback and contrast evaluative, interpretive, and descriptive feedback.",
+      mnemonic:"Direct, Specific, Timely, Valid, Small doses." },
+
+    /* ---------------- 18.2 supporting ---------------- */
+    { id:'ch18-open-book-management', term:'Open Book Management', tier:'supporting', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"A form of transparency in which employees are given essential financial information about the company, sometimes including pay." },
+    { id:'ch18-feedback', term:'Feedback', tier:'supporting', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"The process of telling others how you feel about something they did or said, or about a situation in general." },
+    { id:'ch18-proxemics', term:'Proxemics', tier:'supporting', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"The study of how we use space; interpersonal distance and office layout convey intimacy, openness, and status." },
+    { id:'ch18-networking-roles', term:'Hub, Gatekeeper, Pulse-Taker', tier:'supporting', lo:'18.2', chapterId:'ch18', section:'18.2',
+      definition:"Roles of a good networker: hub (connected with others), gatekeeper (moving information to and from others), and pulse-taker (staying current with what is happening)." },
+
+    /* ---------------- 18.3 must-know ---------------- */
+    { id:'ch18-functional-conflict', term:'Functional vs. Dysfunctional Conflict', tier:'must_know', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Following an inverted-U relationship, moderate conflict is functional (constructive) — moving people toward greater effort, cooperation, and creativity and helping avoid groupthink — while too much or too little conflict is dysfunctional (destructive), harming performance, relationships, and well-being.",
+      plain:"A little disagreement makes teams sharper; none makes them lazy, and too much tears them apart.",
+      why:"It means managers shouldn't try to eliminate all conflict — the goal is the right amount.",
+      example:"A team debating two menu ideas comes up with a better third option (functional); a team that never disagrees approves a bad plan (too little); a team fighting daily stops getting work done (too much).",
+      textbookExample:"Figure 18.5 shows performance peaking at moderate conflict intensity and falling off at both the low and high ends.",
+      commonMistake:"Assuming all conflict is bad — too LITTLE conflict is also dysfunctional because it breeds groupthink and complacency.",
+      examQuestion:"Differentiate functional and dysfunctional conflict using the inverted-U relationship between conflict and performance.",
+      mnemonic:"Goldilocks conflict: not too little, not too much." },
+
+    { id:'ch18-conflict-styles', term:'Conflict Management Styles', tier:'must_know', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Five interpersonal styles formed by combinations of cooperativeness (satisfying the other party) and assertiveness (satisfying yourself): avoidance (unassertive, uncooperative), accommodation (cooperative, unassertive), competition/authoritative command (assertive, uncooperative), compromise (moderate on both), and collaboration/problem solving (assertive and cooperative). Avoidance and accommodation tend toward lose–lose; competition and compromise toward win–lose; collaboration toward win–win.",
+      plain:"Five ways people handle a fight — dodge it, give in, push hard, split the difference, or solve it together.",
+      why:"Only collaboration eliminates the underlying causes; the others leave issues to resurface later.",
+      example:"Two cooks both want Saturday off: avoiding the issue (avoidance), one giving in (accommodation), the manager deciding (competition), each working half a shift (compromise), or finding a swap that works for both (collaboration).",
+      textbookExample:"Figure 18.6 places accommodation top-left, collaboration top-right, avoidance bottom-left, competition bottom-right, with compromise in the center.",
+      commonMistake:"Thinking compromise is win–win — each side gives something up, so it's win–lose and sets the stage for future conflict.",
+      examQuestion:"Describe the five conflict management styles and classify each as lose–lose, win–lose, or win–win.",
+      mnemonic:"Avoid & Accommodate = lose–lose; Compete & Compromise = win–lose; Collaborate = win–win." },
+
+    { id:'ch18-structural-conflict-mgmt', term:'Structural Approaches to Conflict Management', tier:'must_know', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Ways to manage conflict through structure rather than personal style: making more resources available, appealing to higher-level goals, changing (replacing or transferring) people, separating people physically, using integrating devices (liaisons, task forces, cross-functional teams, matrix structures), changing reward systems (e.g., group-level bonuses), and training in interpersonal skills.",
+      plain:"When people can't work it out themselves, change the situation around them.",
+      why:"Some conflicts are irreconcilable at the personal level — structural fixes address the conditions that create them.",
+      example:"Two servers keep fighting over the best section, so the manager rotates sections weekly and pools tips by shift.",
+      textbookExample:"In a student team arguing over presentation content, reminding everyone the goal is to get an 'A' appeals to a higher-level goal.",
+      commonMistake:"Assuming conflict management is only about personal conflict styles — structural changes are often more practical when emotions run high.",
+      examQuestion:"List four structural approaches to conflict management and give an example of each.",
+      mnemonic:null },
+
+    /* ---------------- 18.3 supporting ---------------- */
+    { id:'ch18-conflict', term:'Conflict', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Disagreements on substantive or emotional issues, either overt and openly expressed or covert and hidden behind false surface harmony." },
+    { id:'ch18-substantive-conflict', term:'Substantive Conflict', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Disagreement over goals, tasks, resources, rewards, policies, procedures, or job assignments." },
+    { id:'ch18-emotional-conflict', term:'Emotional Conflict', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Conflict arising from anger, distrust, dislike, fear, resentment, personality clashes, and relationship problems." },
+    { id:'ch18-conflict-resolution', term:'Conflict Resolution', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Eliminating the underlying causes of conflict and reducing the potential for similar conflicts — as opposed to suppressing it, which tends to fester." },
+    { id:'ch18-cooperativeness', term:'Cooperativeness', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"The desire to satisfy another party's needs and concerns." },
+    { id:'ch18-assertiveness', term:'Assertiveness', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"The desire to satisfy one's own needs and concerns." },
+    { id:'ch18-avoidance', term:'Avoidance (Withdrawal)', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Uncooperative and unassertive: downplaying disagreement and withdrawing — a lose–lose style." },
+    { id:'ch18-accommodation', term:'Accommodation (Smoothing)', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Cooperative but unassertive: letting others' wishes rule to keep harmony — a lose–lose style." },
+    { id:'ch18-competition', term:'Competition (Authoritative Command)', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Assertive but uncooperative: dominating through skill or authority — a win–lose style." },
+    { id:'ch18-compromise', term:'Compromise', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Moderately cooperative and assertive: bargaining so each side gains and gives up something — a win–lose style." },
+    { id:'ch18-collaboration', term:'Collaboration (Problem Solving)', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Cooperative and assertive: working through differences so everyone gains — a win–win style that removes underlying causes." },
+    { id:'ch18-integrating-devices', term:'Integrating Devices', tier:'supporting', lo:'18.3', chapterId:'ch18', section:'18.3',
+      definition:"Structures that manage conflict between groups, such as liaison roles, task forces, cross-functional teams, and matrix organization." },
+
+    /* ---------------- 18.4 must-know ---------------- */
+    { id:'ch18-principled-negotiation', term:'Principled Negotiation', tier:'must_know', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Also called integrative negotiation: a win–win approach seeking agreement based on the merits of each party's claims while maintaining relationships. Fisher and Ury's four rules (Getting to Yes): separate the people from the problem, focus on interests not positions, generate many alternatives before deciding, and insist on objective standards. Contrasted with distributive negotiation, where each side makes win–lose claims.",
+      plain:"Negotiating to solve the problem together, not to beat the other person.",
+      why:"Effective negotiation resolves substance AND preserves the relationship — judged by quality, cost, and harmony.",
+      example:"Two employees want the same training slot; instead of arguing, they discover one mainly wants a skill and the other wants visibility, so one takes the training and the other leads the follow-up team share.",
+      textbookExample:"Fisher and Ury's four rules come from Getting to Yes; principled negotiation rests on attitudinal foundations (willingness to trust, share information, ask reasonable questions) and information foundations (knowing what matters to both parties).",
+      commonMistake:"Confusing positions (what someone says they want) with interests (why they want it) — principled negotiation focuses on interests.",
+      examQuestion:"Differentiate distributive and principled negotiation and list Fisher and Ury's four rules.",
+      mnemonic:"People, Interests, Options, Criteria (PIOC)." },
+
+    { id:'ch18-bargaining-zone', term:'Bargaining Zone', tier:'must_know', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"The space between one party's minimum reservation point and the other party's maximum reservation point. A positive bargaining zone exists when the reservation points overlap; if they don't, there is no room for agreement.",
+      plain:"The range where a deal is actually possible — between the least one side will accept and the most the other will give.",
+      why:"A key negotiation task is discovering the other party's reservation point; you can't negotiate effectively until you know whether a positive zone exists.",
+      example:"You'll take a job for no less than $18/hour; the employer will pay up to $20. The bargaining zone is $18–$20.",
+      textbookExample:"Figure 18.7: management's initial offer is $12.75/hour and maximum reservation point $13.75; the union's initial offer is $15.00 and minimum reservation point $13.25 — so the bargaining zone is $13.25 to $13.75. If the union's minimum were $14, there would be no zone.",
+      commonMistake:"Using initial offers to define the zone — the zone is set by the reservation points, not the opening offers.",
+      examQuestion:"Define bargaining zone and identify it in the union–management wage example.",
+      mnemonic:"Zone = between the walk-away points." },
+    
+    { id:'ch18-negotiation-pitfalls', term:'Negotiation Pitfalls', tier:'must_know', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Common errors in negotiation: the myth of the fixed pie (assuming one side must lose for the other to gain), nonrational escalation of conflict (locking into demands to save face), overconfidence and ignoring the other's needs, too much 'telling' and too little 'hearing,' premature cultural comfort (assuming you understand a negotiator from another culture), and ethical misconduct rationalized with excuses like 'It's harmless' or 'The results justify the means.'",
+      plain:"The traps that make negotiations fail — thinking it's zero-sum, getting stubborn, not listening, and cutting ethical corners.",
+      why:"Avoiding these pitfalls is what separates principled win–win outcomes from damaging win–lose battles.",
+      example:"A manager insists on a 10% budget cut just because he said it first — that's nonrational escalation.",
+      textbookExample:"A low-context negotiator who relies on direct questions may misread a high-context counterpart who communicates indirectly through nonverbal signals and avoids firm position statements — premature cultural comfort.",
+      commonMistake:"Believing unethical shortcuts pay off — short-run gains are offset by long-run distrust, dislike, and even revenge in future negotiations.",
+      examQuestion:"Describe four common negotiation pitfalls and how to avoid them.",
+      mnemonic:null },
+
+    { id:'ch18-mediation-arbitration', term:'Mediation and Arbitration', tier:'must_know', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Forms of third-party dispute resolution used at an impasse: in mediation, a neutral third party improves communication and keeps parties focused but issues no ruling; in arbitration, a neutral arbitrator acts as a 'judge' and issues a binding decision after a formal hearing. Alternative dispute resolution uses them only after direct negotiation fails, often with an ombudsperson.",
+      plain:"Mediator = helps you agree. Arbitrator = decides for you.",
+      why:"When negotiation stalls, knowing which kind of third-party help to use determines whether the parties keep control of the outcome.",
+      example:"A mediator helps two coworkers talk through a scheduling dispute; an arbitrator hears both sides of a contract dispute and issues a ruling both must follow.",
+      textbookExample:"Salary arbitration in professional sports is the textbook's example of arbitration.",
+      commonMistake:"Mixing them up — only arbitration produces a binding decision; mediation leaves the decision with the parties.",
+      examQuestion:"Differentiate mediation and arbitration.",
+      mnemonic:"Mediator = Middle-person; Arbitrator = Authority." },
+
+    /* ---------------- 18.4 supporting ---------------- */
+    { id:'ch18-negotiation', term:'Negotiation', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"The process of making joint decisions when the parties involved have different preferences." },
+    { id:'ch18-substance-goals', term:'Substance Goals', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Negotiation goals concerned with outcomes and content issues." },
+    { id:'ch18-relationship-goals', term:'Relationship Goals', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Negotiation goals concerned with how parties work together during and after the negotiation." },
+    { id:'ch18-effective-negotiation', term:'Effective Negotiation', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Negotiation in which substance issues are resolved and relationships maintained or improved, judged by quality, cost, and harmony." },
+    { id:'ch18-distributive-negotiation', term:'Distributive Negotiation', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Negotiation in which each party makes win–lose claims for preferred outcomes, often sacrificing relationships." },
+    { id:'ch18-reservation-point', term:'Reservation Point', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"The minimum (or maximum) a negotiator is willing to accept (or offer) before walking away." },
+    { id:'ch18-fixed-pie', term:'Myth of the Fixed Pie', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"The mistaken win–lose assumption that one party must give something up for the other to gain." },
+    { id:'ch18-mediation', term:'Mediation', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"A neutral third party improves communication and keeps negotiators focused, without issuing a ruling." },
+    { id:'ch18-arbitration', term:'Arbitration', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"A neutral arbitrator acts as a judge and issues a binding decision after hearing both sides." },
+    { id:'ch18-adr', term:'Alternative Dispute Resolution', tier:'supporting', lo:'18.4', chapterId:'ch18', section:'18.4',
+      definition:"Using mediation or arbitration only after direct negotiation fails, often with an ombudsperson who hears complaints and disputes." }
   ],
 
   caseStudies:[
@@ -2273,7 +2524,35 @@ const SEED_CONTENT = {
       whyItMatters:"A memorable, concrete test for moral leadership that anyone can apply by observing how someone treats the least powerful people around them." },
     { id:'ch14-case-drucker-hopper', title:'Drucker and Grace Hopper: \u201cYou Manage Things; You Lead People\u201d', lo:'14.4', tier:'supporting', chapterId:'ch14',
       summary:"Peter Drucker argued leaders become great by 'doing the right things well' and are responsible 'for the survival of the organization'; Grace Hopper, the first female admiral in the U.S. Navy and a follower of Drucker's ideas, added: 'You manage things; you lead people.'",
-      whyItMatters:"Frames the whole chapter's distinction between managing (things, processes) and leading (people) right from the opening page." }
+      whyItMatters:"Frames the whole chapter's distinction between managing (things, processes) and leading (people) right from the opening page." },
+
+    { id:'ch18-case-interpreter', title:'Lost in Interpretation', lo:'18.1', tier:'must_know', chapterId:'ch18',
+      summary:"A Japanese executive meeting with an American joint-venture partner through an interpreter lost about 20% of his intended meaning between himself and the interpreter, and another 20% between the interpreter and the Americans.",
+      whyItMatters:"A concrete measure of how noise accumulates at every step of the communication process." },
+    { id:'ch18-case-translations', title:'Ads Lost in Translation', lo:'18.1', tier:'supporting', chapterId:'ch18',
+      summary:"A Pepsi ad in China meant 'The Pepsi Generation' came out as 'Pepsi will bring your ancestors back from the dead,' and KFC's 'finger lickin' good' became 'eat your fingers off.' Gestures misfire too: thumbs-up insults people in Ghana and Australia.",
+      whyItMatters:"Shows why cultural etiquette and awareness matter in cross-cultural communication." },
+    { id:'ch18-case-bafflegab', title:"Executive 'Bafflegab'", lo:'18.1', tier:'supporting', chapterId:'ch18',
+      summary:"A manager wrote that 'substantial economies were affected … by increasing the time interval between distributions of data-eliciting forms' — meaning the division saved money by sending fewer questionnaires.",
+      whyItMatters:"Poor written expression is a source of noise; clear words beat impressive-sounding ones." },
+    { id:'ch18-case-georgina', title:"The Manager Who Couldn't Listen to Georgina", lo:'18.1', tier:'supporting', chapterId:'ch18',
+      summary:"A manager meeting with Georgina about her overstressed top developer answers a phone call, signs papers, checks a meeting reminder, and starts texting — then tells her to 'take a stab at handling it.'",
+      whyItMatters:"Overloads and distractions ruin face-to-face communication; set aside time, privacy, and attention." },
+    { id:'ch18-case-pay-transparency', title:'Pay Transparency Laws', lo:'18.2', tier:'must_know', chapterId:'ch18',
+      summary:"California and Washington require employers of 15+ to include pay ranges in job postings; Rhode Island requires ranges on request and at offer. A Glassdoor economist says 'The pay transparency genie is out of the bottle,' while a Harvard professor warns it's 'a double-edged sword.'",
+      whyItMatters:"Real-world spread of communication transparency into employment law." },
+    { id:'ch18-case-persuasion-science', title:'The Science of Persuasion', lo:'18.1', tier:'supporting', chapterId:'ch18',
+      summary:"Hotel guests reused 33% more towels when told '75% of customers who stay in this room reuse their towels,' and servers increased tips by giving candy with the bill.",
+      whyItMatters:"Two persuasion levers — social norms and reciprocity." },
+    { id:'ch18-case-intersection-feedback', title:'Feedback When Race and Gender Intersect', lo:'18.3', tier:'supporting', chapterId:'ch18',
+      summary:"Research found women of color may receive less constructive feedback from executives; one executive called it 'a three-edged sword,' and another noted bosses withhold feedback fearing the 'angry black woman' stereotype.",
+      whyItMatters:"Implicit bias can block the feedback people need for career advancement." },
+    { id:'ch18-case-raise', title:'Asking for a Raise', lo:'18.4', tier:'must_know', chapterId:'ch18',
+      summary:"Only 39% of employees got the raise they requested; 49% of refusals cited budget constraints. Experts advise 'figure out what scratches their itch' and 'frame your raise as a win for your boss' rather than talking about fairness or what you deserve.",
+      whyItMatters:"Applies principled negotiation — focus on the other party's interests." },
+    { id:'ch18-case-brokerage', title:'Information Management and Network Brokerage', lo:'18.2', tier:'supporting', chapterId:'ch18',
+      summary:"A study of 262 public companies found information management capability and network centrality predicted competitive brokerage roles, which were positively associated with firm performance.",
+      whyItMatters:"Communication and network position matter at the organizational level too." }
   ],
 
   quiz:[
@@ -2812,7 +3091,95 @@ const SEED_CONTENT = {
     { id:'ch14-q20', type:'scenario', lo:'14.4', difficulty:'hard', chapterId:'ch14', concept:'ch14-moral-overconfidence',
       prompt:"A well-liked executive dismisses concerns about a questionable expense report by thinking, 'I'm a good person with strong values, so this can't really be a problem.' This is a warning sign of:",
       options:["Servant leadership","Moral overconfidence","The gender similarities hypothesis","Path-goal theory"], correctIndex:1,
-      explanation:"Assuming good character automatically rules out wrongdoing is a textbook sign of moral overconfidence — an overly positive self-view that can enable unethical behavior." }
+      explanation:"Assuming good character automatically rules out wrongdoing is a textbook sign of moral overconfidence — an overly positive self-view that can enable unethical behavior." },
+
+    { id:'ch18-q1', type:'multiple_choice', lo:'18.1', difficulty:'easy', chapterId:'ch18', concept:'ch18-communication-process',
+      prompt:"In the communication process, the receiver's job is to:",
+      options:["Encode the message","Decode the message into perceived meaning","Choose the channel","Filter information"], correctIndex:1,
+      explanation:"The sender encodes; the receiver decodes the message into a perceived meaning." },
+    { id:'ch18-q2', type:'multiple_choice', lo:'18.1', difficulty:'medium', chapterId:'ch18', concept:'ch18-effective-efficient',
+      prompt:"A manager emails a complex policy change to 80 employees, and many interpret it differently. The message was:",
+      options:["Effective but not efficient","Efficient but not effective","Both effective and efficient","Neither"], correctIndex:1,
+      explanation:"It was low-cost to send (efficient) but not fully understood (not effective)." },
+    { id:'ch18-q3', type:'true_false', lo:'18.1', difficulty:'easy', chapterId:'ch18', concept:'ch18-persuasive-communication',
+      prompt:"True or False: According to Jay Conger, persuasion can succeed without credibility if the message is clever enough.",
+      correctAnswer:false,
+      explanation:"Without credibility, there is little chance persuasion can be successful." },
+    { id:'ch18-q4', type:'fill_blank', lo:'18.1', difficulty:'medium', chapterId:'ch18', concept:'ch18-information-filtering',
+      prompt:"Tom Peters calls information ______ 'Management Enemy Number 1.'",
+      correctAnswer:"filtering", acceptableAnswers:["filtering"],
+      explanation:"Information filtering distorts information to make it look favorable to the boss." },
+    { id:'ch18-q5', type:'multiple_choice', lo:'18.1', difficulty:'medium', chapterId:'ch18', concept:'ch18-channel-richness',
+      prompt:"Which channel is highest in richness?",
+      options:["Memo","Blog post","Email","In-person meeting"], correctIndex:3,
+      explanation:"In-person meetings are personal and two-way — the high-richness end of the continuum." },
+    { id:'ch18-q6', type:'scenario', lo:'18.1', difficulty:'hard', chapterId:'ch18', concept:'ch18-mixed-message',
+      prompt:"In a meeting, a team member says 'I totally agree' while leaning away and avoiding eye contact. This is best described as:",
+      options:["Information filtering","A mixed message","Proxemics","Efficient communication"], correctIndex:1,
+      explanation:"Words say one thing while body language says another — a mixed message." },
+    { id:'ch18-q7', type:'multiple_choice', lo:'18.1', difficulty:'easy', chapterId:'ch18', concept:'ch18-noise',
+      prompt:"Anything that interferes with the effectiveness of communication is called:",
+      options:["Feedback","Noise","Encoding","Proxemics"], correctIndex:1,
+      explanation:"Noise includes filtering, poor channels, poor expression, distractions, status effects, and cultural differences." },
+    { id:'ch18-q8', type:'multiple_choice', lo:'18.2', difficulty:'medium', chapterId:'ch18', concept:'ch18-active-listening',
+      prompt:"An employee asks, 'What does the team lead expect me to do about this out-of-date notebook?' Which response shows active listening?",
+      options:["'Do the best you can, I guess.'","'You're pretty frustrated with it, aren't you?'","'Not my problem.'","'Just ask IT.'"], correctIndex:1,
+      explanation:"Active listening responds to feelings and reflects them back." },
+    { id:'ch18-q9', type:'two_truths_trap', lo:'18.2', difficulty:'hard', chapterId:'ch18', concept:'ch18-constructive-feedback',
+      prompt:"Two of these feedback guidelines are true and one is a trap. Which is FALSE?",
+      options:["Make feedback specific, with clear recent examples.",
+               "Give all your feedback at once so the receiver hears everything.",
+               "Limit feedback to issues the receiver can be expected to address."],
+      correctIndex:1,
+      explanation:"False — give feedback in small doses, never more than the receiver can handle at once." },
+    { id:'ch18-q10', type:'multiple_choice', lo:'18.2', difficulty:'easy', chapterId:'ch18', concept:'ch18-transparency',
+      prompt:"Providing employees with essential financial information about the company is called:",
+      options:["Information filtering","Open book management","Proxemics","Arbitration"], correctIndex:1,
+      explanation:"Open book management is a form of communication transparency." },
+    { id:'ch18-q11', type:'true_false', lo:'18.2', difficulty:'easy', chapterId:'ch18', concept:'ch18-proxemics',
+      prompt:"True or False: Proxemics is the study of how we use space in communication.",
+      correctAnswer:true,
+      explanation:"Distance and office layout send nonverbal messages about intimacy, openness, and status." },
+    { id:'ch18-q12', type:'multiple_choice', lo:'18.3', difficulty:'medium', chapterId:'ch18', concept:'ch18-functional-conflict',
+      prompt:"According to the inverted-U relationship, performance is highest when conflict is:",
+      options:["Absent","Low","Moderate","Very high"], correctIndex:2,
+      explanation:"Moderate conflict is functional; too little or too much is dysfunctional." },
+    { id:'ch18-q13', type:'matching', lo:'18.3', difficulty:'medium', chapterId:'ch18', concept:'ch18-conflict-styles',
+      prompt:"Match each conflict style to its typical outcome.",
+      pairs:[
+        {left:"Avoidance", right:"Lose–lose"},
+        {left:"Competition", right:"Win–lose"},
+        {left:"Collaboration", right:"Win–win"}
+      ],
+      explanation:"Avoidance/accommodation → lose–lose; competition/compromise → win–lose; collaboration → win–win." },
+    { id:'ch18-q14', type:'multiple_choice', lo:'18.3', difficulty:'medium', chapterId:'ch18', concept:'ch18-conflict-styles',
+      prompt:"A style that is cooperative but unassertive, letting others' wishes rule to keep harmony, is:",
+      options:["Accommodation","Compromise","Competition","Collaboration"], correctIndex:0,
+      explanation:"Accommodation (smoothing) is high cooperativeness, low assertiveness." },
+    { id:'ch18-q15', type:'scenario', lo:'18.3', difficulty:'hard', chapterId:'ch18', concept:'ch18-structural-conflict-mgmt',
+      prompt:"Team members keep competing for individual bonuses and undermining each other. A manager switches to team-based bonuses. This is:",
+      options:["Avoidance","Changing reward systems","Appealing to higher-level goals","Arbitration"], correctIndex:1,
+      explanation:"Shifting rewards to the group level is a structural approach that reinforces teamwork." },
+    { id:'ch18-q16', type:'multiple_choice', lo:'18.4', difficulty:'easy', chapterId:'ch18', concept:'ch18-principled-negotiation',
+      prompt:"Which is one of Fisher and Ury's rules of principled negotiation?",
+      options:["Focus on positions, not interests","Separate the people from the problem","Decide quickly on one alternative","Avoid objective standards"], correctIndex:1,
+      explanation:"The rules: separate people from the problem, focus on interests, generate many options, use objective standards." },
+    { id:'ch18-q17', type:'multiple_choice', lo:'18.4', difficulty:'hard', chapterId:'ch18', concept:'ch18-bargaining-zone',
+      prompt:"The union's minimum reservation point is $13.25/hour and management's maximum is $13.75/hour. The bargaining zone is:",
+      options:["$12.75–$15.00","$13.25–$13.75","$13.75–$15.00","There is no bargaining zone"], correctIndex:1,
+      explanation:"The zone runs between one party's minimum and the other's maximum reservation point." },
+    { id:'ch18-q18', type:'true_false', lo:'18.4', difficulty:'medium', chapterId:'ch18', concept:'ch18-fixed-pie',
+      prompt:"True or False: The 'myth of the fixed pie' assumes both parties can always expand the value available.",
+      correctAnswer:false,
+      explanation:"It's the opposite — the myth assumes one side must lose for the other to gain." },
+    { id:'ch18-q19', type:'multiple_choice', lo:'18.4', difficulty:'easy', chapterId:'ch18', concept:'ch18-mediation-arbitration',
+      prompt:"A neutral third party who hears both sides and issues a binding decision is a(n):",
+      options:["Mediator","Arbitrator","Ombudsperson","Liaison"], correctIndex:1,
+      explanation:"Arbitrators issue binding decisions; mediators only facilitate." },
+    { id:'ch18-q20', type:'multiple_choice', lo:'18.4', difficulty:'medium', chapterId:'ch18', concept:'ch18-negotiation-pitfalls',
+      prompt:"A negotiator refuses to back off an early demand mainly to avoid losing face. This pitfall is:",
+      options:["Premature cultural comfort","Nonrational escalation of conflict","Too much hearing","Principled negotiation"], correctIndex:1,
+      explanation:"Ego and saving face inflate the importance of earlier demands — nonrational escalation." }
   ],
 
   loProse:{
@@ -3261,6 +3628,83 @@ const SEED_CONTENT = {
         "<p>With remote work now commonplace, leadership effectiveness doesn't automatically transfer from in-person to online settings. <span class='term'>Virtual leadership</span> depends less on extroversion, charisma, or being transformative, and more on the basics: providing clear task direction and efficient project management. Effective virtual leaders help team members understand goals, timetables, and assignments; maintain the technology needed for connection; resolve task-related problems; and minimize performance obstacles. Researchers describe them simply as 'doer... goal-focused... dependable... helpful... productive.'</p>" +
         "<p>Management consultant Peter Drucker offered a pragmatic, enduring view captured as <span class='term'>Drucker's 'good old-fashioned' leadership</span>. The foundation is defining and establishing a clear sense of mission — 'the leader's first task is to be the trumpet that sounds a clear sound.' Good leaders treat leadership as a responsibility rather than a rank: they surround themselves with talented people, aren't afraid to develop strong and capable followers, don't blame others when things go wrong, and live by 'the buck stops here.' Finally, Drucker stressed earning and keeping others' trust through personal integrity and consistency — 'effective leadership is not based on being clever, it is based primarily on being consistent.'</p>" +
         "<div class='example'><span class='ex-label'>Chapter Opener</span>Grace Hopper, the first female admiral in the U.S. Navy and a follower of Drucker's ideas, distilled the whole chapter's distinction in one line: 'You manage things; you lead people.'</div>" }
+    ],
+    '18.1':[
+      { heading:"The Communication Process", html:
+        "<p><span class='term'>Communication</span> is the interpersonal process of sending and receiving symbols with messages attached to them. The <span class='term'>communication process</span> can be read as a series of questions: 'Who?' (sender) 'says what?' (message) 'in what ways?' (channel) 'to whom?' (receiver) 'with what result?' (meaning). Through it, people build and use social capital, share information, lead and inspire followers, and influence one another's attitudes and behaviors.</p>" +
+        "<p>Communication is the glue binding the four management functions: plans are shared through communication, organizing structures communication links among people and positions, leading uses communication to influence members and stakeholders, and controlling relies on communication to measure performance results.</p>" +
+        diagBox(diagCommProcess(), "Figure 18.1 — The interactive two-way process of interpersonal communication") },
+      { heading:"Effective and Efficient Communication", html:
+        "<p>Most of us think we're good communicators, and that confidence is itself a problem — we take our abilities for granted. <span class='term'>Effective vs. efficient communication</span> is the key trade-off: effective communication occurs when the receiver fully understands the sender's message; efficient communication occurs at minimum cost in resources.</p>" +
+        "<p>An efficient communication may not be effective. Busy managers, co-workers, and family members rely on voice mail, texts, and emails because they save time — but an email to a distribution list may be interpreted differently by different receivers. And an effective communication may not be efficient: a team leader who visits each member individually to explain new procedures guarantees understanding, but uses a lot of time. Picture an instructor meeting with every student about this chapter — effective, but virtually impossible.</p>" },
+      { heading:"Persuasion and Credibility", html:
+        "<p>Communication is also about influence. <span class='term'>Persuasive communication</span> results in the recipient agreeing with or supporting the message. Managers often succeed more through convincing than order-giving, drawing on social capital. Jay Conger says that without <span class='term'>credibility</span> — trust, respect, and integrity in the eyes of others — persuasion has little chance.</p>" +
+        "<p>Credibility comes from <b>expertise</b>: being knowledgeable with a successful track record. If you're persuading teammates to hire candidate A over B, you must defend your reasons — and it helps if your past recommendations turned out well. Credibility also comes from <b>relationships</b>: working well with others and showing reciprocity. If you ask your boss for a special bonus package for a top candidate, a good relationship adds credibility, because it's always easier to get someone to do what you want if they like you.</p>" +
+        "<div class='example'><span class='ex-label'>Science of Persuasion</span>Hotel guests reused 33% more towels when a card said '75% of customers who stay in this room reuse their towels' (identify with a social norm), and servers got bigger tips when they gave customers a piece of candy with the bill (create reciprocity).</div>" },
+      { heading:"Communication Barriers: Noise and Information Filtering", html:
+        "<p><span class='term'>Noise</span> is anything that interferes with the effectiveness of communication. When a Japanese executive met an American joint-venture partner through an interpreter, about 20% of his meaning was lost between him and the interpreter, and another 20% between the interpreter and the Americans. Noise isn't just cross-cultural — it shows up across generations, too. Common sources include information filtering, poor choice of channels, poor written or oral expression, failure to recognize nonverbal signals, and overloads and distractions.</p>" +
+        diagBox(diagCommNoise(), "Figure 18.2 — Noise: anything that interferes with the communication process") +
+        "<p><span class='term'>Information filtering</span> is the intentional distortion of information to make it appear favorable to the recipient — a reluctance 'to speak truth to power,' heard in comments like 'Criticize my boss? I don't have the right to' or 'I'd get fired.' Tom Peters calls it 'Management Enemy Number 1,' warning that 'once you become a boss you will never hear the unadulterated truth again.' Whether driven by career protection, fear of retribution, unwillingness to admit mistakes, or a desire to please, the result is the same: higher levels get biased information and make bad decisions.</p>" },
+      { heading:"Channels, Expression, Nonverbal Signals, and Distractions", html:
+        "<p>A <span class='term'>communication channel</span> is the pathway or medium through which a message travels. <span class='term'>Channel richness</span> runs from low (posts, e-bulletins, blogs, memos, letters, reports — impersonal, one-way, fast) through email, voicemail, and texts, to high (phone calls, chats, in-person meetings, virtual conferencing — personal, two-way, slower). Written channels suit simple messages going quickly to many people and messages that need documentation, but they're impersonal with limited feedback. Spoken channels — face to face or virtual — work best for complex, difficult messages where immediate feedback matters, and feel more supportive.</p>" +
+        diagBox(diagChannelRichness(), "Figure 18.3 — Richness of alternative communication channels") +
+        "<p><b>Poor expression</b> is another barrier. One business report said 'Consumer elements are continuing to stress the fundamental necessity of a stabilization of the price structure at a lower level' — meaning consumers want prices to go down and stay down. A university president said 'We have strived to be as transparent as possible … within the confines of our … closed negotiations' — meaning the talks were confidential.</p>" +
+        "<p><span class='term'>Nonverbal communication</span> — gestures, facial expressions, posture, eye contact, use of space — carries most of a face-to-face message's impact, which is why voice mail, texts, and emails lose so much (emoticons can't make up for it). A <span class='term'>mixed message</span> happens when words say one thing and body language another — like someone who feels attacked leaning away while verbally agreeing.</p>" +
+        "<p><b>Overloads and distractions</b> from constant electronic messages compete for attention, and even meetings get derailed by calls, texts, and drop-ins. In one scene, a manager meeting with Georgina about her overstressed top developer answers a phone call, signs papers, checks a reminder, and starts texting — then tells her to 'take a stab at handling it.' The fix: set aside adequate time, arrange privacy, anticipate interruptions, and keep attention on the person, not the devices.</p>" },
+      { heading:"Cross-Cultural Communication", html:
+        "<p>Communicating across cultures demands sensitivity and fast learning of local rights and wrongs, especially when you don't share a language. A Pepsi ad in China meant to say 'The Pepsi Generation' came out as 'Pepsi will bring your ancestors back from the dead,' and KFC's 'finger lickin' good' became 'eat your fingers off.'</p>" +
+        "<p><span class='term'>Ethnocentrism</span> — considering one's own culture superior — is a major enemy of cross-cultural communication. It leads to poor listening, alienating ways of speaking, and inappropriate stereotypes, and shows up as arrogance in tone, manners, gestures, and word choice, or as failure to respect nonverbal differences. The American thumbs-up insults people in Ghana and Australia; the thumb-and-forefinger 'OK' circle isn't OK in parts of Europe; and an open-palm wave in West Africa suggests the other person has five fathers. Success requires <span class='term'>cultural etiquette</span> — appropriate manners, language, and behavior with people from other cultures.</p>" }
+    ],
+    '18.2':[
+      { heading:"Transparency and Openness", html:
+        "<p>Better communication means better collaboration. <span class='term'>Communication transparency</span> means being honest and open in sharing accurate and complete information about the organization and the workplace; a lack of it shows up when managers hide or restrict information. Transparency improves decisions, because well-informed people decide well, and boosts motivation, because people trusted with information feel more loyal, engaged, and committed.</p>" +
+        "<p><span class='term'>Open book management</span> gives employees essential financial information about their companies — including pay, once considered best kept secret. Millennial workers value pay transparency and share pay details more readily, and knowing how one's pay compares has been linked to more effort and higher performance.</p>" +
+        "<div class='example'><span class='ex-label'>Pay Transparency Laws</span>California and Washington require employers of 15 or more to include pay ranges in job postings, and Rhode Island requires pay ranges on request and at the time of an offer. A Glassdoor economist says 'The pay transparency genie is out of the bottle,' but Professor Todd Zenger calls it 'a double-edged sword' that may make workers obsess about pay.</div>" },
+      { heading:"Use of Electronic Media", html:
+        "<p>Technology has revolutionized communication — as an asset or a detriment. Online shorthand used in the wrong place backfires: 'Thnx Wd Lv to Wrk 4 U ;)' isn't the follow-up employers want from candidates. Textspeak and emoticons may be normal on social networks but look inappropriate at work. Privacy is another concern: many employers monitor internet use, files, email, and phones. Don't assume you have electronic privacy at work — learn your employer's policies and follow them.</p>" },
+      { heading:"Active Listening", html:
+        "<p>When people talk, what they say may not be what they mean. <span class='term'>Active listening</span> is taking action to help someone say exactly what they really mean. Its rules: <b>listen for message content</b>, <b>listen for feelings</b>, <b>respond to feelings</b> so the person knows they're recognized, <b>note all cues</b> verbal and nonverbal (including mixed messages), and <b>paraphrase and restate</b> what you think you're hearing. It takes sincerity, practice, emotional control, and withholding premature judgment.</p>" +
+        "<div class='example'><span class='ex-label'>Passive vs. Active</span>'Don't you think employees should be promoted on the basis of seniority?' Passive: 'No, I don't!' Active: 'Am I sensing you believe they should?' — and 'What does the team lead expect me to do about this out-of-date notebook?' Passive: 'Do the best you can, I guess.' Active: 'You're pretty frustrated with it, aren't you?'</div>" +
+        "<div class='example'><span class='ex-label'>Research Note</span>A study of 262 public companies found that information management capability and network centrality predicted firms playing competitive brokerage roles between other firms — and those roles were positively associated with firm performance.</div>" +
+        diagBox(diagBrokerage(), "Figure 18.4 — Information management, collaboration networks, and firm performance") },
+      { heading:"Constructive Feedback", html:
+        "<p><span class='term'>Feedback</span> is telling others how you feel about something they did or said, or about a situation. Poorly done, it threatens people and causes resentment; handled well, even criticism can be accepted and used. For someone who comes late to meetings, feedback can be <b>evaluative</b> ('You are unreliable and always late for everything'), <b>interpretive</b> ('you might be spreading yourself too thin'), or <b>descriptive</b> ('You were 30 minutes late for today's meeting and missed a lot of the context').</p>" +
+        "<p><span class='term'>Constructive feedback</span> benefits the receiver rather than satisfying the sender's needs — unlike a supervisor who scolds a programmer for errors while actually angry about failing to give clear instructions. Guidelines: give it directly and with real feeling based on trust; make it specific with clear, recent examples; time it for when the receiver is willing to accept it; keep it valid, limited to things the receiver can address; and give it in small doses.</p>" },
+      { heading:"Networking Skills and Space Design", html:
+        "<p>Recruiters prize communication and networking skills, yet workers rate their bosses only slightly above average on putting ideas into words, credibility, listening, and presentations. A good networker plays three <span class='term'>hub, gatekeeper, pulse-taker</span> roles: a hub connected with others, a gatekeeper moving information to and from others, and a pulse-taker staying current with what's happening.</p>" +
+        "<p><span class='term'>Proxemics</span> is the study of how we use space. Interpersonal distance signals intimacy, openness, and status, and office layout is nonverbal communication too — side-by-side chairs send a different message than a manager behind a desk facing visitors. Pre-pandemic, offices used 'nests' of six to eight co-workers and small 'focus rooms' to spark collaboration; today, hybrid work and shared, as-needed spaces are changing how people connect.</p>" }
+    ],
+    '18.3':[
+      { heading:"Substantive and Emotional Conflict", html:
+        "<p><span class='term'>Conflict</span> occurs as disagreements on substantive or emotional issues — overt and openly expressed, or covert and hidden behind false harmony and political intrigue. Managers lose credibility when they deny or hide from conflicts, or hand them off to others as the 'bad cops.' <span class='term'>Substantive conflict</span> involves disagreements over goals, tasks, resources, rewards, policies, procedures, and job assignments. <span class='term'>Emotional conflict</span> results from anger, distrust, dislike, fear, resentment, personality clashes, and relationship problems. Both can cause difficulties — and both can stimulate creativity and high performance.</p>" },
+      { heading:"Functional and Dysfunctional Conflict", html:
+        "<p><span class='term'>Functional vs. dysfunctional conflict</span> follows an inverted 'U.' Moderate levels are functional (constructive), moving people toward greater effort, cooperation, and creativity, and helping teams avoid poor decisions from groupthink. Dysfunctional (destructive) conflict harms performance, relationships, and well-being — and it occurs with too much conflict (distracting, overwhelming) or too little (groupthink, complacency, lost performance edge).</p>" +
+        diagBox(diagConflictCurve(), "Figure 18.5 — The relationship between conflict and performance") },
+      { heading:"Causes of Conflict and Conflict Resolution", html:
+        "<p>Conflict is driven by role ambiguities (unclear expectations and task uncertainties), resource scarcities (sharing or competing for resources), task interdependencies (depending on others to perform well), competing objectives (poorly set goals or poorly designed rewards), structural differences and incompatible approaches to work, and unresolved prior conflicts that stay latent and erupt later.</p>" +
+        "<p>Conflicts can be suppressed — controlled while causes remain — or resolved. Suppressed conflicts fester, resurface, postpone problems, and create stress. True <span class='term'>conflict resolution</span> eliminates the underlying causes and reduces the potential for similar conflicts.</p>" },
+      { heading:"Conflict Management Styles", html:
+        "<p>People respond to conflict through combinations of <span class='term'>cooperativeness</span> (wanting to satisfy the other party's needs) and <span class='term'>assertiveness</span> (wanting to satisfy one's own). These form five <span class='term'>conflict management styles</span>: <span class='term'>avoidance (withdrawal)</span> — uncooperative and unassertive, downplaying disagreement and staying neutral; <span class='term'>accommodation (smoothing)</span> — cooperative but unassertive, letting others' wishes rule; <span class='term'>competition (authoritative command)</span> — assertive but uncooperative, dominating through skill or authority; <span class='term'>compromise</span> — moderately cooperative and assertive, bargaining so each gains a bit and gives up something; and <span class='term'>collaboration (problem solving)</span> — cooperative and assertive, working through differences so everyone gains.</p>" +
+        diagBox(diagConflictStyles(), "Figure 18.6 — Alternative conflict management styles") +
+        "<p>Avoiding and accommodating create <b>lose–lose</b> conflict: no one gets their true desires and the conflict tends to recur — avoidance pretends it doesn't exist, accommodation plays down differences. Competing and compromising create <b>win–lose</b> conflict: in competition, one party forces its will (like a supervisor dictating a solution); in compromise, each side loses something, setting up future conflict. Collaboration creates <b>win–win</b> conflict, confronting issues openly and eliminating underlying causes — though it takes more time for information gathering and analysis.</p>" },
+      { heading:"Structural Approaches to Conflict Management", html:
+        "<p>When personalities and emotions are irreconcilable, <span class='term'>structural approaches to conflict management</span> can help: make more resources available when conflict is over resources; appeal to higher-level goals (reminding a squabbling student team the goal is an 'A'); change the people by replacing or transferring them; separate the people by rearranging facilities, space, or workflows; use <span class='term'>integrating devices</span> such as liaison roles, task forces, cross-functional teams, and matrix organization; change reward systems, like shifting bonuses or project grades to the group level; and train people in interpersonal skills, which recruiters rank as must-haves.</p>" +
+        "<div class='example'><span class='ex-label'>Ethics Check</span>Research found women of color may receive less constructive feedback from executives. One executive described 'a three-edged sword… you're a minority female,' and another said bosses who fear the 'angry black woman' stereotype 'just won't give you the feedback.'</div>" }
+    ],
+    '18.4':[
+      { heading:"Negotiation Goals and Effective Negotiation", html:
+        "<p><span class='term'>Negotiation</span> is making joint decisions when parties have different preferences — over pay raises, training slots, weekend plans, or who flies to Texas to meet a client. Every negotiation weighs <span class='term'>substance goals</span> (outcomes and content issues) and <span class='term'>relationship goals</span> (how the parties work together now and in the future). <span class='term'>Effective negotiation</span> resolves substance while maintaining or improving relationships, judged by three criteria: <b>quality</b> (a wise agreement satisfactory to all), <b>cost</b> (minimum resources and time), and <b>harmony</b> (fostering good relationships).</p>" },
+      { heading:"Distributive vs. Principled Negotiation", html:
+        "<p>In <span class='term'>distributive negotiation</span>, each party makes win–lose claims; the focus on substance becomes self-centered and competitive, and relationships often get sacrificed. In <span class='term'>principled negotiation</span> (integrative negotiation), the orientation is win–win: agreement based on the merits of each side's claims, with no one losing and relationships preserved. Roger Fisher and William Ury's Getting to Yes sets out four rules: separate the people from the problem; focus on interests, not positions; generate many alternatives before deciding; and insist that results be based on objective standards. It rests on attitudinal foundations (willingness to trust, share information, and ask reasonable questions) and information foundations (knowing what matters to you and finding out what matters to the other side).</p>" },
+      { heading:"Reservation Points and the Bargaining Zone", html:
+        "<p>In a classic labor–management wage negotiation, the union asks for $15.00/hour (initial offer) but has a minimum <span class='term'>reservation point</span> of $13.25 — the lowest it will accept. Management opens at $12.75 but has a maximum reservation point of $13.75. The <span class='term'>bargaining zone</span> is the space between one party's minimum and the other's maximum reservation point — here $13.25 to $13.75. Because the points overlap, it's a positive bargaining zone; if the union's minimum were $14, there would be no room to bargain. Discovering the other party's reservation point is a key negotiating task.</p>" +
+        diagBox(diagBargainingZone(), "Figure 18.7 — The bargaining zone in classic two-party negotiation") },
+      { heading:"Negotiation Pitfalls", html:
+        "<p>Common <span class='term'>negotiation pitfalls</span> include the <span class='term'>myth of the fixed pie</span> — assuming you can only gain if the other side loses, missing chances to expand the pie; <b>nonrational escalation of conflict</b> — locking into stated demands to protect ego and save face; <b>overconfidence and ignoring the other's needs</b>; and <b>too much 'telling' and too little 'hearing'</b> — not making yourself understood, or not listening well enough to understand. <b>Premature cultural comfort</b> is assuming too quickly that you understand a negotiator from another culture: a low-context negotiator used to direct questions may misread a high-context counterpart who communicates indirectly through nonverbal signals and avoids firm positions.</p>" +
+        "<p>Finally, avoid <b>ethical misconduct</b>, driven by greed ('get just a bit more') or the urge to 'win' for its own sake, and excused with rationalizations like 'It was really unavoidable,' 'It's harmless,' or 'The results justify the means.' Short-run gains are offset by long-run distrust, disrespect, dislike, and even revenge in future negotiations.</p>" +
+        "<div class='example'><span class='ex-label'>Data Point</span>Only 39% of employees got the raise they asked for; 49% of refusals cited budget constraints. Of those who don't negotiate, 55% are happy with the offer, 18% fear losing the job, and 18% are uncomfortable negotiating. Experts advise: 'figure out what scratches their itch' and 'frame your raise as a win for your boss' — focus on the boss's interests, not on 'fairness.'</div>" },
+      { heading:"Third-Party Dispute Resolution", html:
+        "<p>When negotiations reach an impasse, a third party can help. In <span class='term'>mediation</span>, a neutral third party improves communication and keeps the parties focused on relevant issues, possibly offering suggestions, but issues no ruling. In <span class='term'>arbitration</span> — like salary arbitration in professional sports — a neutral arbitrator acts as a 'judge,' holds a formal hearing, and issues a binding decision. <span class='term'>Alternative dispute resolution</span> uses mediation or arbitration only after direct negotiation fails, often with an ombudsperson who listens to complaints and disputes. Together these are the core forms of <span class='term'>mediation and arbitration</span> you need to know for the exam.</p>" }
     ]
   },
 
@@ -3285,7 +3729,10 @@ const SEED_CONTENT = {
       "<p>High-yield connections: reliability and validity (13.2) apply to BOTH selection tools and performance appraisals (13.3) — that's why BARS beats the graphic rating scale. Merit pay (13.4) is only as fair as the appraisal system behind it (13.3). And the psychological contract (13.1) explains retention (13.4): when inducements like pay, flexibility, and respect fall short of contributions, turnover follows.</p>" },
     ch14:{ title:"Chapter 14 Wrap-Up: Leading and Leadership Development", html:
       "<p>Chapter 14 zooms from the foundations of leadership (14.1: power, vision, service) through what leaders visibly do (14.2: traits, behaviors, classic styles) into five named contingency models that all answer the same question — 'it depends, but on what?' (14.3: Fiedler, Hersey-Blanchard, House, LMX, Vroom-Jago) — and finishes at the frontier of ongoing personal development (14.4: transformational leadership, EI, gender, moral leadership, virtual leadership).</p>" +
-      "<p>High-yield connections: don't confuse Fiedler (style is FIXED, so match the situation to the leader) with Hersey-Blanchard (style should CHANGE to match follower readiness) — that contrast is a favorite exam trap. Personal power (14.1: expert, relationship, reference) is what actually fuels transformational and interactive leadership (14.4) once position power runs out. And moral leadership (14.4) is really personal integrity (introduced all the way back in Chapter 3's ethics content) applied specifically to the leader-follower relationship.</p>" }
+      "<p>High-yield connections: don't confuse Fiedler (style is FIXED, so match the situation to the leader) with Hersey-Blanchard (style should CHANGE to match follower readiness) — that contrast is a favorite exam trap. Personal power (14.1: expert, relationship, reference) is what actually fuels transformational and interactive leadership (14.4) once position power runs out. And moral leadership (14.4) is really personal integrity (introduced all the way back in Chapter 3's ethics content) applied specifically to the leader-follower relationship.</p>" },
+    ch18:{ title:"Chapter 18 Wrap-Up: Communication, Conflict, and Negotiation", html:
+      "<p>Chapter 18 builds from the basic communication process (18.1: sender, channel, receiver, noise, persuasion) to the skills that make communication work (18.2: transparency, active listening, constructive feedback), then to what happens when people disagree (18.3: functional conflict, the five styles, structural fixes) and how to reach agreements (18.4: principled negotiation, the bargaining zone, pitfalls, mediation and arbitration).</p>" +
+      "<p>High-yield connections: the conflict styles (18.3) map onto negotiation types (18.4) — competition and compromise look like distributive win–lose bargaining, while collaboration is principled win–win negotiation. Active listening (18.2) is the cure for the 'too much telling, too little hearing' pitfall (18.4). And information filtering (18.1) is a big reason transparency (18.2) matters: leaders who don't share honestly rarely get honest information back.</p>" }
   },
 
   crossword:{
@@ -3407,6 +3854,23 @@ const SEED_CONTENT = {
       { answer:"EMPATHY", clue:"Social awareness: understanding others' emotions" },
       { answer:"AUTHENTIC", clue:"___ leadership: self-aware and true to one's own values" },
       { answer:"NARCISSISTIC", clue:"A dark triad trait: arrogant and craving admiration" }
+    ],
+    ch18:[
+      { answer:"SENDER", clue:"Encodes the intended meaning" },
+      { answer:"RECEIVER", clue:"Decodes the message into perceived meaning" },
+      { answer:"NOISE", clue:"Anything interfering with effective communication" },
+      { answer:"CHANNEL", clue:"Pathway or medium carrying a message" },
+      { answer:"FEEDBACK", clue:"Telling others how you feel about what they did" },
+      { answer:"FILTERING", clue:"Information ___: telling the boss what they want to hear" },
+      { answer:"CREDIBILITY", clue:"Trust and respect that make persuasion possible" },
+      { answer:"PROXEMICS", clue:"Study of how we use space" },
+      { answer:"CONFLICT", clue:"Disagreement on substantive or emotional issues" },
+      { answer:"COMPROMISE", clue:"Each side gains a bit and gives up something" },
+      { answer:"AVOIDANCE", clue:"Uncooperative, unassertive conflict style" },
+      { answer:"NEGOTIATION", clue:"Joint decisions when preferences differ" },
+      { answer:"MEDIATION", clue:"Neutral party helps, but issues no ruling" },
+      { answer:"ARBITRATION", clue:"Neutral party issues a binding decision" },
+      { answer:"ETHNOCENTRISM", clue:"Considering one's own culture superior" }
     ]
   },
 
@@ -3427,7 +3891,8 @@ const SEED_CONTENT = {
       { answer:"Whistleblower", clues:["I risk my career to speak up.","I expose misconduct inside my own organization.","Laws try to protect me, but many say those laws aren't enough."] },
       { answer:"Ethical Dilemma", clues:["I offer a potential benefit, but I'm morally murky.","I rarely have one clear right answer.","Discrimination, conflicts of interest, and product safety are common versions of me."] },
       { answer:"Servant Leadership", clues:["I flip the usual leader-follower relationship.","My focus is other-centered, not self-centered.","I reject the idea that power is zero-sum."] },
-      { answer:"Fiedler's Contingency Model", clues:["I use a scale that measures your least-preferred co-worker.","I believe leadership style is hard to change.","My advice: match the leader to the situation, not the other way around."] }
+      { answer:"Fiedler's Contingency Model", clues:["I use a scale that measures your least-preferred co-worker.","I believe leadership style is hard to change.","My advice: match the leader to the situation, not the other way around."] },
+      { answer:"Active Listening", clues:["I'm more than just hearing words.","I listen for content AND feelings.","Paraphrasing and restating are among my rules."] }
     ],
     fillTheGap:[
       { prompt:"Intellectual Capital = Competency × ______", answer:"Commitment" },
@@ -3445,7 +3910,8 @@ const SEED_CONTENT = {
       { prompt:"The ______ view of ethics judges behavior by the greatest good for the greatest number.", answer:"utilitarian" },
       { prompt:"The triple bottom line measures Profit, People, and ______.", answer:"Planet" },
       { prompt:"Managerial Power = Position Power + ______ Power.", answer:"Personal" },
-      { prompt:"The Hersey-Blanchard ______ style is used with high-readiness followers who are able, willing, and confident.", answer:"delegating" }
+      { prompt:"The Hersey-Blanchard ______ style is used with high-readiness followers who are able, willing, and confident.", answer:"delegating" },
+      { prompt:"The space between one party's minimum and the other's maximum reservation point is the bargaining ______.", answer:"zone" }
     ],
     orderIt:[
       { title:"Ernst & Young's Retention Fix, in Management-Function Order", steps:[
@@ -3488,7 +3954,12 @@ const SEED_CONTENT = {
         "Telling: followers unable, unwilling, insecure",
         "Selling: followers unable, but willing or confident",
         "Participating: followers able, but unwilling or insecure",
-        "Delegating: followers able, willing, and confident"] }
+        "Delegating: followers able, willing, and confident"] },
+      { title:"The Communication Process", steps:[
+        "Sender encodes the intended meaning",
+        "Message travels through a channel",
+        "Receiver decodes it into perceived meaning",
+        "Feedback returns to the sender"] }
     ],
     conceptSortCategories:['1.1','1.2','1.3','1.4','1.5'],
     matchingPool:['ch1-intellectual-capital','ch1-glass-ceiling','ch1-open-system','ch1-accountability',
@@ -3504,7 +3975,9 @@ const SEED_CONTENT = {
       'ch14-position-power','ch14-personal-power','ch14-visionary-leadership',
       'ch14-servant-leadership','ch14-fiedlers-contingency-model','ch14-transformational-leadership',
       'ch13-hrm-process','ch13-psychological-contract','ch13-realistic-job-preview',
-      'ch13-reliability-validity','ch13-bars','ch13-collective-bargaining']
+      'ch13-reliability-validity','ch13-bars','ch13-collective-bargaining',
+      'ch18-communication-process','ch18-noise','ch18-active-listening',
+      'ch18-functional-conflict','ch18-principled-negotiation','ch18-bargaining-zone']
   }
 };
 
@@ -4192,6 +4665,95 @@ function diagAssessmentApproaches(){
   s += svgBox(30,200,220,150,'RESULTS-BASED — actual accomplishments; watch leniency; rank ordering and forced distribution','var(--lo1)','var(--lo1-tint)',10);
   s += svgBox(270,200,220,150,'360-DEGREE — supervisor, higher-ups, peers, subordinates, customers, and self','var(--lo4)','var(--lo4-tint)',10);
   return diagWrap('0 0 520 380', s);
+}
+
+function diagCommProcess(){
+  const m = svgMarker('var(--lo1)'), m2 = svgMarker('var(--lo3)');
+  let s = '<defs>'+m.def+m2.def+'</defs>';
+  s += svgBox(10,40,170,80,'SENDER — encodes intended meaning','var(--lo1)','var(--lo1-tint)',10);
+  s += svgBox(245,50,170,60,'Message channel','var(--lo2)','var(--lo2-tint)',10);
+  s += svgBox(480,40,170,80,'RECEIVER — decodes perceived meaning','var(--lo1)','var(--lo1-tint)',10);
+  s += svgArrowLine(180,80,245,80,'var(--lo1)',m.id);
+  s += svgArrowLine(415,80,480,80,'var(--lo1)',m.id);
+  s += svgArrowPath('M 565,120 Q 565,190 330,190 Q 95,190 95,120','var(--lo3)',m2.id);
+  s += svgLabel(330,210,'Feedback channel',20,10,'var(--lo3)');
+  return diagWrap('0 0 660 225', s);
+}
+function diagCommNoise(){
+  const m = svgMarker('var(--lo1)'), mb = svgMarker('var(--bad)');
+  let s = '<defs>'+m.def+mb.def+'</defs>';
+  s += svgBox(10,30,160,70,'SENDER — intended meaning','var(--lo1)','var(--lo1-tint)',10);
+  s += svgBox(490,30,160,70,'RECEIVER — perceived meaning','var(--lo1)','var(--lo1-tint)',10);
+  s += svgArrowLine(170,55,490,55,'var(--lo1)',m.id);
+  s += svgArrowLine(490,85,170,85,'var(--lo1)',m.id);
+  s += svgLabel(330,42,'message channel',20,9,'var(--text-muted)');
+  s += svgLabel(330,100,'feedback channel',20,9,'var(--text-muted)');
+  s += svgBox(150,150,360,90,'NOISE — semantic problems, little or no feedback, improper channels, physical distractions, status effects, cultural differences','var(--bad)','var(--bad-tint)',10);
+  s += svgArrowLine(330,150,330,92,'var(--bad)',mb.id);
+  return diagWrap('0 0 660 255', s);
+}
+function diagChannelRichness(){
+  let s = '';
+  s += '<line x1="30" y1="60" x2="630" y2="60" style="stroke:var(--text-muted);stroke-width:2"/>';
+  s += '<circle cx="30" cy="60" r="7" style="fill:var(--lo3)"/><circle cx="330" cy="60" r="7" style="fill:var(--lo2)"/><circle cx="630" cy="60" r="7" style="fill:var(--lo1)"/>';
+  s += svgLabel(110,30,'LOW RICHNESS',16,11,'var(--lo3)',700);
+  s += svgLabel(330,30,'MIDDLE',16,11,'var(--lo2)',700);
+  s += svgLabel(550,30,'HIGH RICHNESS',16,11,'var(--lo1)',700);
+  s += svgBox(10,90,200,110,'Posts, e-bulletins, blogs, memos, letters, reports — impersonal, one-way, fast','var(--lo3)','var(--lo3-tint)',9);
+  s += svgBox(230,90,200,110,'Email, voice-mail, texts','var(--lo2)','var(--lo2-tint)',10);
+  s += svgBox(450,90,200,110,'Phone calls, chats, in-person meetings, virtual conferencing — personal, two-way, slow','var(--lo1)','var(--lo1-tint)',9);
+  return diagWrap('0 0 660 215', s);
+}
+function diagBrokerage(){
+  const m = svgMarker('var(--lo1)');
+  let s = '<defs>'+m.def+'</defs>';
+  s += svgBox(10,15,190,60,'Information Management Capability','var(--lo1)','var(--lo1-tint)',10);
+  s += svgBox(10,125,190,60,'Network Centrality','var(--lo1)','var(--lo1-tint)',10);
+  s += '<line x1="105" y1="75" x2="105" y2="125" style="stroke:var(--lo1);stroke-width:2"/>';
+  s += svgBox(260,70,170,60,'Competitive Brokerage Role','var(--lo2)','var(--lo2-tint)',10);
+  s += svgBox(490,70,160,60,'Firm Performance','var(--lo3)','var(--lo3-tint)',11);
+  s += svgArrowLine(200,45,260,90,'var(--lo1)',m.id);
+  s += svgArrowLine(200,155,260,112,'var(--lo1)',m.id);
+  s += svgArrowLine(430,100,490,100,'var(--lo1)',m.id);
+  return diagWrap('0 0 660 200', s);
+}
+function diagConflictCurve(){
+  let s = '';
+  s += '<line x1="60" y1="150" x2="600" y2="150" style="stroke:var(--border);stroke-width:1.5;stroke-dasharray:5,4"/>';
+  s += '<line x1="60" y1="270" x2="600" y2="270" style="stroke:var(--border);stroke-width:1.5"/>';
+  s += '<line x1="60" y1="30" x2="60" y2="270" style="stroke:var(--border);stroke-width:1.5"/>';
+  s += '<path d="M 70,240 C 200,20 460,20 590,240" style="fill:none;stroke:var(--lo1);stroke-width:3"/>';
+  s += svgLabel(330,50,'FUNCTIONAL — moderate conflict helps performance',30,10,'var(--good)',700);
+  s += svgLabel(130,205,'DYSFUNCTIONAL — too little',16,9,'var(--bad)');
+  s += svgLabel(530,205,'DYSFUNCTIONAL — too much',16,9,'var(--bad)');
+  s += svgLabel(330,290,'Intensity of conflict (low → high)',36,10,'var(--text-muted)');
+  s += '<text transform="rotate(-90 30,150)" x="30" y="150" text-anchor="middle" style="font-family:var(--font-mono);font-size:10px;fill:var(--text-muted)">Impact on performance</text>';
+  return diagWrap('0 0 620 305', s);
+}
+function diagConflictStyles(){
+  let s = '';
+  s += svgBox(40,20,230,140,'ACCOMMODATION (Smoothing) — play down conflict, seek harmony','var(--lo1)','var(--lo1-tint)',10);
+  s += svgBox(290,20,230,140,'COLLABORATION (Problem Solving) — meet everyone needs','var(--good)','var(--good-tint)',10);
+  s += svgBox(40,180,230,140,'AVOIDANCE (Withdrawal) — deny conflict, hide feelings','var(--bad)','var(--bad-tint)',10);
+  s += svgBox(290,180,230,140,'COMPETITION (Authoritative Command) — force a solution','var(--lo3)','var(--lo3-tint)',10);
+  s += svgBox(195,135,170,70,'COMPROMISE — gains and losses to each','var(--lo4)','var(--bg-card)',10);
+  s += '<text transform="rotate(-90 18,170)" x="18" y="170" text-anchor="middle" style="font-family:var(--font-mono);font-size:10px;fill:var(--text-muted)">Cooperativeness (low → high)</text>';
+  s += svgLabel(280,342,'Assertiveness (low → high)',30,10,'var(--text-muted)');
+  return diagWrap('0 0 540 355', s);
+}
+function diagBargainingZone(){
+  function x(v){ return 40 + (v-12.5)*220; }
+  let s = '';
+  s += '<rect x="'+x(13.25)+'" y="25" width="'+(x(13.75)-x(13.25))+'" height="45" style="fill:var(--good-tint);stroke:var(--good);stroke-width:1.5"/>';
+  s += svgLabel((x(13.25)+x(13.75))/2,47,'BARGAINING ZONE',12,10,'var(--good)',700);
+  s += '<line x1="30" y1="130" x2="640" y2="130" style="stroke:var(--text-muted);stroke-width:2"/>';
+  [[12.75,'Management initial offer','var(--lo1)'],[13.25,'Union minimum reservation point','var(--lo3)'],[13.75,'Management maximum reservation point','var(--lo1)'],[15.00,'Union initial offer','var(--lo3)']].forEach(p=>{
+    if(p[0]===13.25||p[0]===13.75) s += '<line x1="'+x(p[0])+'" y1="70" x2="'+x(p[0])+'" y2="94" style="stroke:'+p[2]+';stroke-width:2;stroke-dasharray:4,3"/>';
+    s += '<line x1="'+x(p[0])+'" y1="120" x2="'+x(p[0])+'" y2="140" style="stroke:'+p[2]+';stroke-width:2"/>';
+    s += svgLabel(x(p[0]),108,'$'+p[0].toFixed(2),8,11,p[2],700);
+    s += svgLabel(x(p[0]),172,p[1],14,9,p[2]);
+  });
+  return diagWrap('0 0 660 210', s);
 }
 
 /* =====================================================================
@@ -6156,7 +6718,10 @@ function mgConnections(mount){
     ['ch14-moral-leadership','ch14-moral-overconfidence'], ['ch14-emotional-intelligence-leadership','ch14-interactive-leadership'],
     ['ch13-psychological-contract','ch13-strategic-hrm'], ['ch13-eeo','ch13-bfoq'],
     ['ch13-bars','ch13-performance-management'], ['ch13-onboarding','ch13-socialization'],
-    ['ch13-collective-bargaining','ch13-labor-union'], ['ch13-merit-pay','ch13-incentive-pay']
+    ['ch13-collective-bargaining','ch13-labor-union'], ['ch13-merit-pay','ch13-incentive-pay'],
+    ['ch18-noise','ch18-information-filtering'], ['ch18-active-listening','ch18-constructive-feedback'],
+    ['ch18-conflict-styles','ch18-functional-conflict'], ['ch18-principled-negotiation','ch18-bargaining-zone'],
+    ['ch18-persuasive-communication','ch18-credibility'], ['ch18-mediation-arbitration','ch18-negotiation-pitfalls']
   ];
   let idx = 0, score = 0;
   const items = shuffle(pairs);
